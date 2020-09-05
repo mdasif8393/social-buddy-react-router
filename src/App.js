@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import SinglePost from './components/SinglePost/SinglePost';
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
 
         <Route exact path = "/">
           <Home />
+        </Route>
+
+        <Route path = "/posts/:id">
+          <SinglePost />
         </Route>
 
         <Route path = "*">

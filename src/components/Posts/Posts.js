@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -22,9 +23,17 @@ const useStyles = makeStyles({
 });
 const Posts = (props) => {
     const classes = useStyles();
+
     const { title, body, id } = props.posts;
     console.log(props.posts);
+
     const styles ={ padding: '10px', backgroundColor: 'pink', margin: '15px'}
+
+    const history = useHistory();
+    const handleClick = (id) => {
+        history.push(`/posts/${id}`)
+    }
+
     return (
         <Container fixed >
                 <Card style={styles}  className={classes.root} >
@@ -39,7 +48,7 @@ const Posts = (props) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                    <Button variant="contained" color="secondary">
+                    <Button onClick={() => handleClick(id)} variant="contained" color="secondary">
                          See Details
                     </Button>
                         
