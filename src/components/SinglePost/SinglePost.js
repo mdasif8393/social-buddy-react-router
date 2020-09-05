@@ -12,6 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Comments from '../Comments/Comments';
+import './SinglePost.css'
 
 const useStyles = makeStyles({
     root: {
@@ -51,23 +52,21 @@ const SinglePost = () => {
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            {title}
-          </Typography>
+                        <span className="title-style">Post Title:</span>  {title}
+                        </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            {body}
-          </Typography>
+                        <span className="title-style">Post:</span> {body}
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
                 <div>
-                    <h4>{comments.length} comments</h4>
+                    <h5 className="title-style">{comments.length} comments</h5>
                     {
                         comments.map(pd => <Comments comments={pd}></Comments>)
                     }
-                </div>
-                    
+                </div>   
             </Card>
         </Container>
     );
 };
-
 export default SinglePost;

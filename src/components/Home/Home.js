@@ -13,6 +13,7 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setPosts(data))
     },[])
+
     return (
         <Container fixed>
             {
@@ -22,5 +23,4 @@ const Home = () => {
         
     );
 };
-
 export default Home;

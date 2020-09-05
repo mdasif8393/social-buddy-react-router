@@ -11,8 +11,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useHistory } from 'react-router-dom';
 
-
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 1200,
@@ -21,12 +19,13 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
+
 const Posts = (props) => {
     const classes = useStyles();
 
     const { title, body, id } = props.posts;
 
-    const styles ={ padding: '10px', backgroundColor: 'pink', margin: '15px'}
+    const styles ={ padding: '10px', backgroundColor: 'pink', margin: '15px',}
 
     const history = useHistory();
     const handleClick = (id) => {
@@ -35,24 +34,23 @@ const Posts = (props) => {
 
     return (
         <Container fixed >
-                <Card style={styles}  className={classes.root} >
-                    <CardActionArea>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {title}
-          </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {body}
-          </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                    <Button onClick={() => handleClick(id)} variant="contained" color="secondary">
-                         See Details
-                    </Button>
-                        
-                    </CardActions>
-                </Card>
+          <Card style={styles}  className={classes.root} >
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  <span className="title-style">Post Title:</span> {title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                            <span className="title-style">Post:</span> {body}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button onClick={() => handleClick(id)} variant="contained" color="secondary">
+                See More
+              </Button>          
+            </CardActions>
+          </Card>
         </Container>
 
     );
