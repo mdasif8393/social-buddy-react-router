@@ -25,13 +25,12 @@ const Posts = (props) => {
     const classes = useStyles();
 
     const { title, body, id } = props.posts;
-    console.log(props.posts);
 
     const styles ={ padding: '10px', backgroundColor: 'pink', margin: '15px'}
 
     const history = useHistory();
     const handleClick = (id) => {
-        history.push(`/posts/${id}`)
+        history.push(`/post/${id}`)
     }
 
     return (

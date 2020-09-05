@@ -25,7 +25,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path = "/posts/:id">
+        <Route path = "/post/:id">
           <SinglePost />
         </Route>
 
