@@ -40,7 +40,7 @@ const SinglePost = () => {
 
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/comments?postId=1`)
+        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
         .then(res => res.json())
         .then(data => setComments(data));
     },[])
